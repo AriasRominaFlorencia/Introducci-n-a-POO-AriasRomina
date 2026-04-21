@@ -19,32 +19,41 @@ class Agenda(Persona):
         })
 
     def Lista(self):
-        print(f"\nLISTA DE CONTACTOS: ")
-        for i in range(len(contactos)):
-            print(f"\nContacto {i+1}: ")
-            print(f"-Nombre: {contactos[i]['Nombre']}")
-            print(f"-Teléfono: {contactos[i]['Teléfono']}")
-            print(f"-Email: {contactos[i]['Email']}")
+        if len(contactos)!=0:
+            print(f"\nLISTA DE CONTACTOS: ")
+            for i in range(len(contactos)):
+                print(f"\nContacto {i+1}: ")
+                print(f"-Nombre: {contactos[i]['Nombre']}")
+                print(f"-Teléfono: {contactos[i]['Teléfono']}")
+                print(f"-Email: {contactos[i]['Email']}")
+        else:
+            print("No hay ningun contacto cargado")
             
     def Buscar(self):
-        self.buscar=input("Ingrese el nombre de la persona: ")
-        for l in range(len(contactos)):
-            if contactos[l]['Nombre']==self.buscar:
-                print(f"\nNombre: {contactos[l]['Nombre']}")
-                print(f"Teléfono: {contactos[l]['Teléfono']}")
-                print(f"Email: {contactos[l]['Email']}")
+        if len(contactos)!=0:
+            self.buscar=input("Ingrese el nombre de la persona: ")
+            for l in range(len(contactos)):
+                if contactos[l]['Nombre']==self.buscar:
+                    print(f"\nNombre: {contactos[l]['Nombre']}")
+                    print(f"Teléfono: {contactos[l]['Teléfono']}")
+                    print(f"Email: {contactos[l]['Email']}")
+
+        else:
+            print("No hay ningun contacto cargado")
     
     def Editar(self):
         global contactos
-        self.editar=int(input("Ingrese el contacto que desea editar: "))-1
-        while self.editar>len(contactos):
-            self.editar=int(input("Ingrese un contacto válido: "))-1
+        if len(contactos)!=0:
+            self.editar=int(input("Ingrese el contacto que desea editar: "))-1
+            while self.editar>len(contactos):
+                self.editar=int(input("Ingrese un contacto válido: "))-1
         
-        super().__init__()
-        contactos[self.editar]["Nombre"] = self.nombre
-        contactos[self.editar]["Teléfono"] = self.telefono
-        contactos[self.editar]["Email"] = self.email
-
+            super().__init__()
+            contactos[self.editar]["Nombre"] = self.nombre
+            contactos[self.editar]["Teléfono"] = self.telefono
+            contactos[self.editar]["Email"] = self.email
+        else:
+            print("No hay ningun contacto cargado")
 
 
 
