@@ -73,7 +73,7 @@ class Aventura(Aventurero):
             if op==3:
                 print("\nINVENTARIO: ")
                 for i in range(len(self.objetosRecolectados)):
-                    print(f"- {self.objetosRecolectados[i]")
+                    print(f"- {self.objetosRecolectados[i]}")
 
             print("\nSeguir explorando? ")
             print("1- Si")
