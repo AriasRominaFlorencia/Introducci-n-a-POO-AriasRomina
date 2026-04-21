@@ -1,7 +1,7 @@
 import random
 
 monedasCofre=[10,20,5,6,8,15]
-cofres=["monedas","araña"]
+cofres=["monedas","araña","araña]
 cerrado=["si","no"]
 
 class Personaje:
